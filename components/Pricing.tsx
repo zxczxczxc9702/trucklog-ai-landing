@@ -147,7 +147,7 @@ export const Pricing: React.FC = () => {
                 </p>
                 <div className="bg-white p-4 rounded-lg border border-slate-200 text-sm text-left">
                   <p className="font-bold mb-1">📢 안내사항</p>
-                  <p className="text-slate-500">안내 문자에 포함된 링크를 통해 24시간 내에 결제를 완료하셔야 할인가(월 29,900원)가 적용됩니다.</p>
+                  <p className="text-slate-500">안내 문자에 포함된 계좌에 24시간 내에 입금을 완료하셔야 할인가(월 29,900원)가 적용됩니다.</p>
                 </div>
               </div>
             ) : (
