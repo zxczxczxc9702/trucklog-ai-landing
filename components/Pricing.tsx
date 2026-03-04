@@ -141,14 +141,16 @@ export const Pricing: React.FC = () => {
                   <Check className="h-8 w-8" />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-2">신청이 접수되었습니다!</h3>
-                <p className="text-slate-600 mb-6">
-                  입력하신 연락처로 <span className="font-bold text-slate-900">결제 및 계정 생성 안내 문자</span>를 발송해드렸습니다.<br/>
-                  (30분 내로 문자 메시지를 확인해주세요)
+                <p className="text-slate-600 mb-6 leading-relaxed">
+                  이용을 원하시는 경우 아래 계좌로 입금해 주시면 됩니다.<br/>
+                  <br/>
+                  기업은행 49503179301019<br/>
+                  예금주 : 강현욱<br/>
+                  <br/>
+                  입금이 확인되면 3월 24일 서비스 오픈 시 등록된 연락처로 안내 문자를 보내드릴 예정입니다.<br/>
+                  <br/>
+                  감사합니다.
                 </p>
-                <div className="bg-white p-4 rounded-lg border border-slate-200 text-sm text-left">
-                  <p className="font-bold mb-1">📢 안내사항</p>
-                  <p className="text-slate-500">안내 문자에 포함된 계좌에 24시간 내에 입금을 완료하셔야 할인가(월 29,900원)가 적용됩니다.</p>
-                </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
