@@ -15,7 +15,7 @@ const features: ServiceFeature[] = [
   },
   {
     title: "황금 키워드 매일 제안",
-    description: "경쟁은 적고 검색량은 많은 '화물차 황금 키워드'를 매일 분석하여 딜러님께 제안해 드립니다.",
+    description: "경쟁은 적고 검색량은 많은 '화물차 키워드'를 매일 확인할 수 있습니다.",
     icon: Search
   },
   {
@@ -45,7 +45,7 @@ export const Features: React.FC = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-          {features.map((feature, index) => (
+          {features.filter((feature) => feature.icon !== Search).map((feature, index) => (
             <div 
               key={index}
               className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-300 group"
