@@ -74,13 +74,12 @@ export const Pricing: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            중고트럭 매물 올리면<br />
-            AI가 블로그 글 + 포스팅까지 자동으로 해드립니다
+            지금 신청하고<br />
+            블로그 업무를 줄이세요
           </h2>
           <p className="text-lg text-slate-600">
-            트럭 스펙만 입력하세요.<br />
-            AI가 판매되는 블로그 글을 작성하고 자동 포스팅합니다.<br />
-            딜러는 매물 등록만 하면 됩니다.
+            연락처만 남기면 도입 안내를 보내드립니다.<br />
+            딜러님은 매물 등록에 집중하고, 블로그 운영은 자동화하세요.
           </p>
         </div>
 
@@ -93,17 +92,17 @@ export const Pricing: React.FC = () => {
               </div>
               
               <div className="mb-6">
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">얼리버드 월 구독</h3>
-                <p className="text-sm text-slate-500">모든 프리미엄 기능을 제한 없이 이용</p>
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">얼리버드 전용 요금</h3>
+                <p className="text-sm text-slate-500">블로그 운영 자동화 기능 전체 포함</p>
               </div>
 
               <div className="space-y-2 mb-8 pb-8 border-b border-slate-100">
                 <div className="flex justify-between items-center text-slate-500">
-                  <span>출시 후 가격</span>
-                  <span className="text-lg line-through decoration-slate-500 decoration-1">34,900원</span>
+                  <span>정상가</span>
+                  <span className="text-lg line-through decoration-slate-500 decoration-1">월 49,000원</span>
                 </div>
                 <div className="flex justify-between items-center text-brand-600 font-bold bg-brand-50 p-3 rounded-lg mt-2">
-                  <span className="flex items-center"><Timer className="h-4 w-4 mr-2" />지금 신청 시 5,000원 할인</span>
+                  <span className="flex items-center"><Timer className="h-4 w-4 mr-2" />정가 대비 월 19,100원 할인</span>
                   <span className="text-3xl">월 29,900원</span>
                 </div>
                 <p className="text-right text-xs text-red-500 font-medium">* 부가세 별도, 정기 결제(구독형)</p>
@@ -112,19 +111,19 @@ export const Pricing: React.FC = () => {
               <ul className="space-y-3">
                 <li className="flex items-center text-slate-700">
                   <div className="bg-brand-100 p-1 rounded-full mr-3"><Check className="h-4 w-4 text-brand-600" /></div>
-                  <span className="font-semibold">무제한 블로그 원고 생성</span>
+                  <span className="font-semibold">판매형 블로그 원고 자동 생성</span>
                 </li>
                 <li className="flex items-center text-slate-700">
                   <div className="bg-brand-100 p-1 rounded-full mr-3"><Check className="h-4 w-4 text-brand-600" /></div>
-                  <span className="font-semibold">매일 황금 키워드 제안</span>
-                </li>
-                <li className="flex items-center text-slate-700">
-                  <div className="bg-brand-100 p-1 rounded-full mr-3"><Check className="h-4 w-4 text-brand-600" /></div>
-                  <span className="font-semibold">네이버 로직 실시간 반영</span>
+                  <span className="font-semibold">차량별 제목, 본문, 세일즈 문구 생성</span>
                 </li>
                 <li className="flex items-center text-slate-700">
                   <div className="bg-brand-100 p-1 rounded-full mr-3"><Check className="h-4 w-4 text-brand-600" /></div>
                   <span className="font-semibold">예약 발행 및 임시저장</span>
+                </li>
+                <li className="flex items-center text-slate-700">
+                  <div className="bg-brand-100 p-1 rounded-full mr-3"><Check className="h-4 w-4 text-brand-600" /></div>
+                  <span className="font-semibold">네이버 로직 업데이트 반영</span>
                 </li>
               </ul>
             </div>
@@ -145,12 +144,12 @@ export const Pricing: React.FC = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-2">신청이 접수되었습니다!</h3>
                 <p className="text-slate-600 mb-6 leading-relaxed">
-                  이용을 원하시는 경우 아래 계좌로 입금해 주시면 됩니다.<br/>
+                  빠르게 시작을 원하시면 아래 계좌로 입금해 주세요.<br/>
                   <br/>
                   기업은행 49503179301019<br/>
                   예금주 : 강현욱<br/>
                   <br/>
-                  입금이 확인되면 3월 24일 서비스 오픈 시 등록된 연락처로 안내 문자를 보내드릴 예정입니다.<br/>
+                  입금 확인 후 등록된 연락처로 계정 생성 및 시작 안내 문자를 보내드립니다.<br/>
                   <br/>
                   감사합니다.
                 </p>
@@ -162,8 +161,8 @@ export const Pricing: React.FC = () => {
                      <CreditCard className="h-6 w-6" />
                    </div>
                    <div>
-                     <h3 className="text-xl font-bold text-slate-900">구독 신청서 작성</h3>
-                     <p className="text-sm text-slate-500">결제 정보는 문자로 안내드립니다.</p>
+                     <h3 className="text-xl font-bold text-slate-900">도입 신청서 작성</h3>
+                     <p className="text-sm text-slate-500">남겨주신 연락처로 시작 안내를 보내드립니다.</p>
                    </div>
                 </div>
                 
@@ -201,10 +200,37 @@ export const Pricing: React.FC = () => {
                       className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none"
                     />
                   </div>
-                  <div className="flex items-start bg-yellow-50 p-3 rounded-lg">
+
+                  <div className="rounded-xl border border-slate-200 bg-white p-4">
+                    <p className="text-sm font-bold text-slate-900 mb-3">개인정보 수집 및 이용 안내</p>
+                    <dl className="space-y-3 text-xs leading-6 text-slate-600">
+                      <div>
+                        <dt className="font-semibold text-slate-800">수집 항목</dt>
+                        <dd>상사명/성함, 휴대폰 번호, 이메일 주소</dd>
+                      </div>
+                      <div>
+                        <dt className="font-semibold text-slate-800">수집 목적</dt>
+                        <dd>도입 상담, 신청 접수 확인, 결제 및 계정 생성 안내, 문의 응대</dd>
+                      </div>
+                      <div>
+                        <dt className="font-semibold text-slate-800">보관 기간</dt>
+                        <dd>신청일로부터 12개월 또는 관계 법령상 보관 필요 기간까지</dd>
+                      </div>
+                      <div>
+                        <dt className="font-semibold text-slate-800">동의 거부 권리</dt>
+                        <dd>동의를 거부할 수 있으나, 거부 시 신청 접수 및 안내 제공이 제한될 수 있습니다.</dd>
+                      </div>
+                    </dl>
+                  </div>
+
+                  <div className="flex items-start bg-yellow-50 p-3 rounded-lg border border-yellow-200">
                     <input type="checkbox" id="agree" required className="mt-1 mr-2" />
-                    <label htmlFor="agree" className="text-xs text-slate-600 font-medium">
-                      지금 신청하면 월 29,900원에 이용 가능합니다. 이에 동의하며, 서비스 이용 안내 수신을 허락합니다.
+                    <label htmlFor="agree" className="text-xs text-slate-700 font-medium leading-5">
+                      [필수] 개인정보 수집·이용에 동의하며{' '}
+                      <a href="#privacy" className="text-brand-700 underline underline-offset-2">
+                        개인정보처리방침
+                      </a>
+                      을 확인했습니다.
                     </label>
                   </div>
                 </div>
@@ -216,10 +242,10 @@ export const Pricing: React.FC = () => {
                 )}
 
                 <Button type="submit" variant="primary" className="w-full h-12 text-lg font-bold" disabled={loading}>
-                  {loading ? <Loader2 className="animate-spin mr-2" /> : '지금 얼리버드 신청하기 (월 29,900원)'}
+                  {loading ? <Loader2 className="animate-spin mr-2" /> : '얼리버드 신청하고 안내받기'}
                 </Button>
                 <p className="text-center text-xs text-slate-400 mt-4">
-                  출시 후 가격 : 34,900원
+                  정상가 월 49,000원
                 </p>
               </form>
             )}

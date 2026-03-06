@@ -5,6 +5,7 @@ import { Features } from './components/Features';
 import { DemoSection } from './components/DemoSection';
 import { BetaBenefits } from './components/BetaBenefits';
 import { Pricing } from './components/Pricing';
+import { PrivacyPolicySection } from './components/PrivacyPolicySection';
 import { Footer } from './components/Footer';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <DemoSection />
         <BetaBenefits />
         <Pricing />
+        <PrivacyPolicySection />
       </main>
       <Footer />
     </div>

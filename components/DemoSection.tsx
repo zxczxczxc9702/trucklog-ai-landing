@@ -7,13 +7,13 @@ export const DemoSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            실제 <span className="text-brand-600">블로그 원고</span> 예시
+            차량 정보만 넣어도 <span className="text-brand-600">이런 글</span>이 나옵니다
           </h2>
           <p className="text-lg text-slate-600">
-            차량 스펙만 입력하면, 20년 경력 전문가 스타일의 설득력 있는 원고가 즉시 완성됩니다.
+            딜러가 직접 쓰지 않아도, 고객이 읽고 문의하도록 설계된 판매형 원고를 자동으로 생성합니다.
           </p>
           <p className="mt-4 inline-flex items-center rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700 border border-blue-200">
-            이 페이지는 예시 화면이며, 실제 AI 생성 기능은 본 서비스 앱에서 제공됩니다.
+            예시 화면입니다. 실제 서비스에서는 차량 스펙 입력 후 바로 생성됩니다.
           </p>
         </div>
 
@@ -188,7 +188,7 @@ export const DemoSection: React.FC = () => {
           <div className="text-center mt-8">
             <div className="inline-flex items-center px-4 py-2 bg-slate-900 text-white rounded-full text-sm font-medium shadow-lg">
               <Sparkles className="h-4 w-4 mr-2 text-brand-400" />
-              실제 서비스에서는 스펙 입력 후 단 3초 만에 생성됩니다
+              실제 서비스에서는 제목, 본문, 후킹 문구까지 자동 생성됩니다
             </div>
           </div>
         </div>

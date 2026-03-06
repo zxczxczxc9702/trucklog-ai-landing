@@ -16,21 +16,20 @@ export const Hero: React.FC = () => {
         <div className="text-center max-w-4xl mx-auto">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-red-100 text-red-700 text-sm font-bold mb-6 border border-red-200 shadow-sm">
             <span className="flex h-2 w-2 rounded-full bg-red-600 mr-2 animate-pulse" />
-            얼리버드 모집 중
+            중고트럭 딜러 전용 AI 마케팅
           </div>
 
           <h1 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight leading-tight mb-8">
-            중고트럭 매물 올리면
+            매물 등록만 하세요
             <br className="hidden md:block" />
-            <span className="text-brand-600">AI가 블로그 글 + 포스팅까지 자동으로 해드립니다</span>
+            <span className="text-brand-600">블로그 홍보는 AI가 자동으로 합니다</span>
           </h1>
 
           <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-            트럭 스펙만 입력하세요.
+            차량 정보만 입력하면 제목, 본문, 세일즈 문구, 포스팅까지 자동 생성.
             <br />
-            AI가 판매되는 블로그 글을 작성하고 자동 포스팅합니다.
-            <br />
-            딜러는 매물 등록만 하면 됩니다.
+            블로그 쓸 시간 없는 딜러도 꾸준히 노출을 만들고
+            문의 받을 준비를 끝낼 수 있습니다.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
@@ -40,7 +39,7 @@ export const Hero: React.FC = () => {
               size="lg"
               className="w-full sm:w-auto text-lg shadow-lg shadow-brand-500/30 font-bold"
             >
-              지금 얼리버드 신청하기 (월 29,900원)
+              얼리버드 가격으로 시작하기
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button
@@ -49,14 +48,14 @@ export const Hero: React.FC = () => {
               className="w-full sm:w-auto text-lg bg-white"
               onClick={() => scrollToSection('demo')}
             >
-              AI 성능 미리보기
+              생성 예시 보기
             </Button>
           </div>
 
           <div className="flex flex-col md:flex-row justify-center gap-4 text-slate-500 text-sm font-medium bg-white/60 backdrop-blur-md p-4 rounded-xl inline-block border border-slate-200 shadow-sm">
             <div className="flex items-center text-slate-700">
               <Calendar className="h-4 w-4 mr-2 text-brand-600" />
-              출시 후 가격 : 34,900원
+              정상가 월 49,000원
             </div>
             <div className="hidden md:block text-slate-300">|</div>
             <div className="flex items-center text-slate-700">

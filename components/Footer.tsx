@@ -37,8 +37,8 @@ export const Footer: React.FC = () => {
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
           <p>&copy; 2024 TruckLog AI. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white">이용약관</a>
-            <a href="#" className="hover:text-white">개인정보처리방침</a>
+            <a href="#apply" className="hover:text-white">도입 문의</a>
+            <a href="#privacy" className="hover:text-white">개인정보처리방침</a>
           </div>
         </div>
       </div>
