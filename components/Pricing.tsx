@@ -74,10 +74,13 @@ export const Pricing: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            얼리버드 특가 신청하기
+            중고트럭 매물 올리면<br />
+            AI가 블로그 글 + 포스팅까지 자동으로 해드립니다
           </h2>
           <p className="text-lg text-slate-600">
-            3월 1일 정식 출시 전까지만 제공되는 <span className="text-brand-600 font-bold">런칭 전 특별 할인</span>을 놓치지 마세요.
+            트럭 스펙만 입력하세요.<br />
+            AI가 판매되는 블로그 글을 작성하고 자동 포스팅합니다.<br />
+            딜러는 매물 등록만 하면 됩니다.
           </p>
         </div>
 
@@ -96,8 +99,8 @@ export const Pricing: React.FC = () => {
 
               <div className="space-y-2 mb-8 pb-8 border-b border-slate-100">
                 <div className="flex justify-between items-center text-slate-500">
-                  <span>정식 출시가 (3/1 이후)</span>
-                  <span className="text-lg line-through decoration-slate-500 decoration-1">월 34,900원</span>
+                  <span>출시 후 가격</span>
+                  <span className="text-lg line-through decoration-slate-500 decoration-1">34,900원</span>
                 </div>
                 <div className="flex justify-between items-center text-brand-600 font-bold bg-brand-50 p-3 rounded-lg mt-2">
                   <span className="flex items-center"><Timer className="h-4 w-4 mr-2" />지금 신청 시 5,000원 할인</span>
@@ -213,10 +216,10 @@ export const Pricing: React.FC = () => {
                 )}
 
                 <Button type="submit" variant="primary" className="w-full h-12 text-lg font-bold" disabled={loading}>
-                  {loading ? <Loader2 className="animate-spin mr-2" /> : '얼리버드 특가로 시작하기'}
+                  {loading ? <Loader2 className="animate-spin mr-2" /> : '지금 얼리버드 신청하기 (월 29,900원)'}
                 </Button>
                 <p className="text-center text-xs text-slate-400 mt-4">
-                  * 결제 전에는 요금이 부과되지 않습니다.
+                  출시 후 가격 : 34,900원
                 </p>
               </form>
             )}
