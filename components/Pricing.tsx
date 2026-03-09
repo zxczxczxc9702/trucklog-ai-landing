@@ -129,12 +129,12 @@ export const Pricing: React.FC = () => {
           <div className="space-y-6">
             <div className="bg-white p-8 rounded-2xl border-2 border-brand-500 shadow-xl relative overflow-hidden">
               <div className="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg animate-pulse">
-                곧 마감됩니다
+                선착순 10명 한정
               </div>
               
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-slate-900 mb-2">얼리버드 전용 요금</h3>
-                <p className="text-sm text-slate-500">블로그 운영 자동화 기능 전체 포함</p>
+                <p className="text-sm text-slate-500">선착순 10명 한정, 블로그 운영 자동화 기능 전체 포함</p>
               </div>
 
               <div className="space-y-2 mb-8 pb-8 border-b border-slate-100">

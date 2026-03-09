@@ -16,7 +16,7 @@ export const Hero: React.FC = () => {
         <div className="text-center max-w-4xl mx-auto">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-red-100 text-red-700 text-sm font-bold mb-6 border border-red-200 shadow-sm">
             <span className="flex h-2 w-2 rounded-full bg-red-600 mr-2 animate-pulse" />
-            중고트럭 딜러 전용 AI 마케팅
+            중고트럭 딜러 전용 AI 마케팅 · 선착순 10명 얼리버드
           </div>
 
           <h1 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight leading-tight mb-8">
