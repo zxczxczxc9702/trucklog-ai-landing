@@ -10,40 +10,72 @@ import emailjs from '@emailjs/browser';
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string | undefined;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string | undefined;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string | undefined;
+const LEAD_SUBMIT_COOLDOWN_MS = 60_000;
+const LEAD_SUBMIT_STORAGE_KEY = 'trucklog-last-lead-submit-at';
+
+const normalizePhone = (value: string) => value.replace(/\D/g, '');
+
+const formatPhoneInput = (value: string) => {
+  const digits = normalizePhone(value).slice(0, 11);
+
+  if (digits.length <= 3) return digits;
+  if (digits.length <= 7) return `${digits.slice(0, 3)}-${digits.slice(3)}`;
+  if (digits.length === 10) return `${digits.slice(0, 3)}-${digits.slice(3, 6)}-${digits.slice(6)}`;
+
+  return `${digits.slice(0, 3)}-${digits.slice(3, 7)}-${digits.slice(7)}`;
+};
 // =================================================================================
 
 export const Pricing: React.FC = () => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [name, setName] = useState('');
+  const [companyWebsite, setCompanyWebsite] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !phone || !name) return;
-    
+
     setLoading(true);
     setError(null);
 
-    // [개발자 확인용 로그]
-    console.group("🚀 신규 얼리버드 구독 신청 시도");
-    console.log(`👤 성함/상사: ${name}`);
-    console.log(`📱 연락처: ${phone}`);
-    console.log(`📧 이메일: ${email}`);
-    console.groupEnd();
+    const trimmedName = name.trim();
+    const trimmedEmail = email.trim();
+    const trimmedPhone = phone.trim();
+    const normalizedPhone = normalizePhone(trimmedPhone);
+
+    if (companyWebsite.trim()) {
+      setLoading(false);
+      setSubmitted(true);
+      return;
+    }
+
+    if (!trimmedName || !trimmedEmail || normalizedPhone.length < 10 || normalizedPhone.length > 11) {
+      setLoading(false);
+      setError('입력한 이름, 연락처, 이메일 형식을 다시 확인해주세요.');
+      return;
+    }
 
     try {
-      // EmailJS 전송 로직
+      const lastSubmittedAt = window.localStorage.getItem(LEAD_SUBMIT_STORAGE_KEY);
+      if (lastSubmittedAt) {
+        const elapsedTime = Date.now() - Number(lastSubmittedAt);
+        if (Number.isFinite(elapsedTime) && elapsedTime < LEAD_SUBMIT_COOLDOWN_MS) {
+          setLoading(false);
+          setError('반복 제출 방지를 위해 1분 후 다시 시도해주세요.');
+          return;
+        }
+      }
+    } catch {
+      // 로컬 스토리지를 사용할 수 없는 환경에서는 제출 흐름을 그대로 진행합니다.
+    }
+
+    try {
       if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
         setLoading(false);
         setError("폼 연동 설정이 누락되었습니다. 관리자에게 문의해주세요.");
-        console.error("EmailJS 환경변수 누락", {
-          hasServiceId: Boolean(EMAILJS_SERVICE_ID),
-          hasTemplateId: Boolean(EMAILJS_TEMPLATE_ID),
-          hasPublicKey: Boolean(EMAILJS_PUBLIC_KEY),
-        });
         return;
       }
 
@@ -52,18 +84,27 @@ export const Pricing: React.FC = () => {
         EMAILJS_TEMPLATE_ID,
         {
           to_name: "관리자",      // 템플릿 변수 (받는 사람)
-          from_name: name,       // 템플릿 변수 (신청자 이름)
-          phone: phone,          // 템플릿 변수 (연락처)
-          email: email,          // 템플릿 변수 (이메일)
-          message: `얼리버드 구독 신청\n이름: ${name}\n연락처: ${phone}\n이메일: ${email}`
+          from_name: trimmedName,       // 템플릿 변수 (신청자 이름)
+          phone: trimmedPhone,          // 템플릿 변수 (연락처)
+          email: trimmedEmail,          // 템플릿 변수 (이메일)
+          message: `얼리버드 구독 신청\n이름: ${trimmedName}\n연락처: ${trimmedPhone}\n이메일: ${trimmedEmail}`
         },
         EMAILJS_PUBLIC_KEY
       );
 
+      try {
+        window.localStorage.setItem(LEAD_SUBMIT_STORAGE_KEY, String(Date.now()));
+      } catch {
+        // 저장 실패 시에도 성공 흐름은 유지합니다.
+      }
+
       setLoading(false);
       setSubmitted(true);
+      setName('');
+      setPhone('');
+      setEmail('');
+      setCompanyWebsite('');
     } catch (err) {
-      console.error("EmailJS 전송 실패:", err);
       setLoading(false);
       setError("신청 접수 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
     }
@@ -79,7 +120,7 @@ export const Pricing: React.FC = () => {
           </h2>
           <p className="text-lg text-slate-600">
             연락처만 남기면 도입 안내를 보내드립니다.<br />
-            딜러님은 매물 등록에 집중하고, 블로그 운영은 자동화하세요.
+            딜러님은 매물 상담에 집중하고, 블로그 운영은 자동화하세요.
           </p>
         </div>
 
@@ -156,6 +197,19 @@ export const Pricing: React.FC = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
+                <div className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+                  <label htmlFor="company-website">회사 홈페이지</label>
+                  <input
+                    id="company-website"
+                    name="company_website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={companyWebsite}
+                    onChange={(e) => setCompanyWebsite(e.target.value)}
+                  />
+                </div>
+
                 <div className="flex items-center mb-6">
                    <div className="bg-brand-600 text-white p-2 rounded-lg mr-3">
                      <CreditCard className="h-6 w-6" />
@@ -171,10 +225,12 @@ export const Pricing: React.FC = () => {
                     <label className="block text-sm font-medium text-slate-700 mb-1">상사명 / 성함</label>
                     <input 
                       type="text" 
+                      name="name"
                       required
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="예: 대박트럭 김철수"
+                      autoComplete="organization"
                       className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none"
                     />
                   </div>
@@ -182,10 +238,14 @@ export const Pricing: React.FC = () => {
                     <label className="block text-sm font-medium text-slate-700 mb-1">휴대폰 번호</label>
                     <input 
                       type="tel" 
+                      name="phone"
                       required
                       value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
+                      onChange={(e) => setPhone(formatPhoneInput(e.target.value))}
                       placeholder="010-0000-0000"
+                      autoComplete="tel"
+                      inputMode="numeric"
+                      pattern="^01[0-9]-?\d{3,4}-?\d{4}$"
                       className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none"
                     />
                   </div>
@@ -193,10 +253,12 @@ export const Pricing: React.FC = () => {
                     <label className="block text-sm font-medium text-slate-700 mb-1">이메일 주소</label>
                     <input 
                       type="email" 
+                      name="email"
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="truck@example.com"
+                      autoComplete="email"
                       className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none"
                     />
                   </div>
@@ -242,10 +304,10 @@ export const Pricing: React.FC = () => {
                 )}
 
                 <Button type="submit" variant="primary" className="w-full h-12 text-lg font-bold" disabled={loading}>
-                  {loading ? <Loader2 className="animate-spin mr-2" /> : '얼리버드 신청하고 안내받기'}
+                  {loading ? <><Loader2 className="animate-spin mr-2" />접수 중...</> : '얼리버드 신청하고 안내받기'}
                 </Button>
                 <p className="text-center text-xs text-slate-400 mt-4">
-                  정상가 월 49,000원
+                  반복 제출 방지를 위해 1분 이내 재접수는 제한됩니다.
                 </p>
               </form>
             )}

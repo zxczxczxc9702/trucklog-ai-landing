@@ -2,6 +2,8 @@ import React from 'react';
 import { Truck } from 'lucide-react';
 
 export const Footer: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,23 +21,23 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="text-white font-bold mb-4">서비스</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-brand-400">기능 소개</a></li>
-              <li><a href="#" className="hover:text-brand-400">요금제</a></li>
-              <li><a href="#" className="hover:text-brand-400">이용 가이드</a></li>
-              <li><a href="#" className="hover:text-brand-400">딜러 등록 문의</a></li>
+              <li><a href="#features" className="hover:text-brand-400">기능 소개</a></li>
+              <li><a href="#demo" className="hover:text-brand-400">생성 예시</a></li>
+              <li><a href="#benefits" className="hover:text-brand-400">얼리버드 혜택</a></li>
+              <li><a href="#apply" className="hover:text-brand-400">도입 신청</a></li>
             </ul>
           </div>
           <div>
             <h4 className="text-white font-bold mb-4">고객지원</h4>
             <ul className="space-y-2 text-sm">
-              <li>전화: 1588-0000</li>
-              <li>이메일: dealer@trucklogai.com</li>
+              <li><a href="#apply" className="hover:text-brand-400">도입 상담: 신청서 작성</a></li>
+              <li><a href="mailto:dealer@trucklogai.com" className="hover:text-brand-400">이메일: dealer@trucklogai.com</a></li>
               <li>운영시간: 평일 09:00 - 18:00</li>
             </ul>
           </div>
         </div>
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
-          <p>&copy; 2024 TruckLog AI. All rights reserved.</p>
+          <p>&copy; {currentYear} TruckLog AI. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#apply" className="hover:text-white">도입 문의</a>
             <a href="#privacy" className="hover:text-white">개인정보처리방침</a>

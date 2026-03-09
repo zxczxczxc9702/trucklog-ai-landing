@@ -30,7 +30,12 @@ export const Header: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <div className="flex items-center cursor-pointer" onClick={() => window.scrollTo(0, 0)}>
+          <button
+            type="button"
+            className="flex items-center cursor-pointer"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            aria-label="페이지 상단으로 이동"
+          >
             <div className="bg-brand-600 p-2 rounded-lg mr-2">
               <Truck className="h-6 w-6 text-white" />
             </div>
@@ -38,21 +43,25 @@ export const Header: React.FC = () => {
               TruckLog<span className="text-brand-600">AI</span>
               <span className="ml-2 text-xs bg-red-600 text-white px-2 py-0.5 rounded-full tracking-wider font-bold animate-pulse">딜러 전용</span>
             </span>
-          </div>
+          </button>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center space-x-8">
-            <button onClick={() => scrollToSection('features')} className="text-slate-600 hover:text-brand-600 font-medium">문제 해결</button>
-            <button onClick={() => scrollToSection('demo')} className="text-slate-600 hover:text-brand-600 font-medium">생성 예시</button>
-            <button onClick={() => scrollToSection('benefits')} className="text-slate-600 hover:text-brand-600 font-medium">얼리버드 혜택</button>
+            <button type="button" onClick={() => scrollToSection('features')} className="text-slate-600 hover:text-brand-600 font-medium">문제 해결</button>
+            <button type="button" onClick={() => scrollToSection('demo')} className="text-slate-600 hover:text-brand-600 font-medium">생성 예시</button>
+            <button type="button" onClick={() => scrollToSection('benefits')} className="text-slate-600 hover:text-brand-600 font-medium">얼리버드 혜택</button>
             <Button variant="primary" size="sm" onClick={() => scrollToSection('apply')}>얼리버드 신청</Button>
           </nav>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button 
+              type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-slate-600 hover:text-slate-900"
+              aria-label={isMobileMenuOpen ? '메뉴 닫기' : '메뉴 열기'}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-navigation"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -62,11 +71,11 @@ export const Header: React.FC = () => {
 
       {/* Mobile Nav */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white border-t border-slate-100 shadow-lg">
+        <div id="mobile-navigation" className="md:hidden absolute top-full left-0 w-full bg-white border-t border-slate-100 shadow-lg">
           <div className="flex flex-col p-4 space-y-4">
-            <button onClick={() => scrollToSection('features')} className="text-left text-slate-600 font-medium py-2">문제 해결</button>
-            <button onClick={() => scrollToSection('demo')} className="text-left text-slate-600 font-medium py-2">생성 예시</button>
-            <button onClick={() => scrollToSection('benefits')} className="text-left text-slate-600 font-medium py-2">얼리버드 혜택</button>
+            <button type="button" onClick={() => scrollToSection('features')} className="text-left text-slate-600 font-medium py-2">문제 해결</button>
+            <button type="button" onClick={() => scrollToSection('demo')} className="text-left text-slate-600 font-medium py-2">생성 예시</button>
+            <button type="button" onClick={() => scrollToSection('benefits')} className="text-left text-slate-600 font-medium py-2">얼리버드 혜택</button>
             <Button variant="primary" className="w-full" onClick={() => scrollToSection('apply')}>얼리버드 신청</Button>
           </div>
         </div>

@@ -32,7 +32,7 @@ const features: ServiceFeature[] = [
 
 export const Features: React.FC = () => {
   return (
-    <section id="features" className="py-24 bg-slate-50">
+    <section id="features" className="py-24 bg-slate-50 scroll-mt-24 md:scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto mb-16">
           <div className="bg-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
@@ -70,11 +70,11 @@ export const Features: React.FC = () => {
 
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            딜러님은 <span className="text-brand-600">매물 등록</span>에만 집중하세요
+            딜러님은 <span className="text-brand-600">매물 상담</span>에만 집중하세요
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             TruckLog AI가 판매형 블로그 글 작성부터 포스팅 운영까지 대신합니다.<br/>
-            매입, 상담, 출고에 집중하면서도 블로그는 꾸준히 돌아가게 만듭니다.
+            딜러님은 매물 상담, 매입, 출고에 집중하면서도 블로그는 꾸준히 돌아가게 만듭니다.
           </p>
         </div>
 

@@ -3,7 +3,7 @@ import { Sparkles, CheckCircle2, Quote, ThumbsUp, PenTool, Wrench, Wallet } from
 
 export const DemoSection: React.FC = () => {
   return (
-    <section id="demo" className="py-24 bg-white overflow-hidden">
+    <section id="demo" className="py-24 bg-white overflow-hidden scroll-mt-24 md:scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
@@ -158,12 +158,15 @@ export const DemoSection: React.FC = () => {
                   <p className="text-xl font-bold text-slate-900 mb-3">📞 망설이는 순간 계약됩니다</p>
                   <p className="text-sm text-slate-600 mb-4">
                     좋은 차는 주인을 오래 기다려주지 않습니다.<br/>
-                    부담 없이 전화 주시면, <strong>차량 영상통화</strong>로 실시간 확인도 가능합니다.
+                    부담 없이 문의를 남기시면, <strong>차량 영상통화</strong>와 도입 안내를 빠르게 받아보실 수 있습니다.
                   </p>
-                  <div className="inline-block bg-brand-600 text-white px-8 py-4 rounded-full text-3xl font-black shadow-lg hover:bg-brand-700 transition-colors cursor-pointer transform hover:scale-105 duration-200">
-                    010-1234-5678
-                  </div>
-                  <p className="text-sm text-slate-400 mt-3">스마트폰에서 터치 시 바로 연결됩니다</p>
+                  <a
+                    href="#apply"
+                    className="inline-block bg-brand-600 text-white px-8 py-4 rounded-full text-2xl font-black shadow-lg hover:bg-brand-700 transition-colors cursor-pointer transform hover:scale-105 duration-200"
+                  >
+                    도입 상담 신청하기
+                  </a>
+                  <p className="text-sm text-slate-400 mt-3">터치하면 신청서 작성 섹션으로 이동합니다</p>
                 </div>
 
                 {/* Tags */}
