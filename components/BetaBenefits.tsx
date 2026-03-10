@@ -11,10 +11,10 @@ export const BetaBenefits: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            지금 신청하면 <span className="text-brand-400">선착순 10명 한정가</span>로 시작합니다
+            얼리버드 기한 내 신청하면 <span className="text-brand-400">첫 3개월 특가</span>로 시작합니다
           </h2>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-            선착순 10명 마감 후에는 정상가로 전환됩니다. <br/>
+            얼리버드 기한 종료 후에는 정상가 신청으로 전환됩니다. <br/>
             초기 고객에게는 가격과 지원 모두 더 유리하게 제공됩니다.
           </p>
         </div>
@@ -25,9 +25,9 @@ export const BetaBenefits: React.FC = () => {
             <div className="w-14 h-14 bg-slate-700 rounded-xl flex items-center justify-center mb-6">
               <TrendingUp className="h-7 w-7 text-brand-400" />
             </div>
-            <h3 className="text-xl font-bold text-white mb-3">선착순 10명 한정가 적용</h3>
+            <h3 className="text-xl font-bold text-white mb-3">첫 3개월 할인 적용</h3>
             <p className="text-slate-300 leading-relaxed">
-              선착순 10명 안에 신청하시면 <strong>월 29,900원</strong>으로 시작할 수 있고, 마감 후에는 정상가 <strong>월 49,000원</strong>으로 전환됩니다.
+              얼리버드 기한 안에 신청하시면 첫 3개월은 <strong>월 29,900원</strong>으로 이용할 수 있고, 이후에는 정상가 <strong>월 49,000원</strong>으로 전환됩니다.
             </p>
           </div>
 

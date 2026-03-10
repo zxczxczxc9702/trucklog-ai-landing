@@ -16,7 +16,7 @@ export const Hero: React.FC = () => {
         <div className="text-center max-w-4xl mx-auto">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-red-100 text-red-700 text-sm font-bold mb-6 border border-red-200 shadow-sm">
             <span className="flex h-2 w-2 rounded-full bg-red-600 mr-2 animate-pulse" />
-            중고트럭 딜러 전용 AI 마케팅 · 선착순 10명 얼리버드
+            중고트럭 딜러 전용 AI 마케팅 · 얼리버드 3개월 특가
           </div>
 
           <h1 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight leading-tight mb-8">
@@ -38,7 +38,7 @@ export const Hero: React.FC = () => {
               size="lg"
               className="w-full sm:w-auto text-lg shadow-lg shadow-brand-500/30 font-bold"
             >
-              얼리버드 가격으로 시작하기
+              얼리버드 3개월 특가로 시작하기
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button
@@ -59,7 +59,7 @@ export const Hero: React.FC = () => {
             <div className="hidden md:block text-slate-300">|</div>
             <div className="flex items-center text-slate-700">
               <AlertCircle className="h-4 w-4 mr-2 text-red-500" />
-              얼리버드 월 29,900원
+              얼리버드 첫 3개월 월 29,900원
             </div>
           </div>
         </div>

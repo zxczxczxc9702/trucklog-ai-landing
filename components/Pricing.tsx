@@ -129,12 +129,12 @@ export const Pricing: React.FC = () => {
           <div className="space-y-6">
             <div className="bg-white p-8 rounded-2xl border-2 border-brand-500 shadow-xl relative overflow-hidden">
               <div className="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg animate-pulse">
-                선착순 10명 한정
+                첫 3개월 할인
               </div>
               
               <div className="mb-6">
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">얼리버드 전용 요금</h3>
-                <p className="text-sm text-slate-500">선착순 10명 한정, 블로그 운영 자동화 기능 전체 포함</p>
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">얼리버드 3개월 특가</h3>
+                <p className="text-sm text-slate-500">얼리버드 기한 내 신청 시 첫 3개월 할인 적용</p>
               </div>
 
               <div className="space-y-2 mb-8 pb-8 border-b border-slate-100">
@@ -143,10 +143,10 @@ export const Pricing: React.FC = () => {
                   <span className="text-lg line-through decoration-slate-500 decoration-1">월 49,000원</span>
                 </div>
                 <div className="flex justify-between items-center text-brand-600 font-bold bg-brand-50 p-3 rounded-lg mt-2">
-                  <span className="flex items-center"><Timer className="h-4 w-4 mr-2" />정가 대비 월 19,100원 할인</span>
+                  <span className="flex items-center"><Timer className="h-4 w-4 mr-2" />첫 3개월 월 19,100원 할인</span>
                   <span className="text-3xl">월 29,900원</span>
                 </div>
-                <p className="text-right text-xs text-red-500 font-medium">* 부가세 별도, 정기 결제(구독형)</p>
+                <p className="text-right text-xs text-red-500 font-medium">* 4개월 차부터 월 49,000원 / 부가세 별도 / 정기 결제(구독형)</p>
               </div>
 
               <ul className="space-y-3">
