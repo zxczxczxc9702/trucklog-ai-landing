@@ -123,7 +123,7 @@ export const Pricing: React.FC = () => {
             딜러님은 매물 상담에 집중하고, 블로그 운영은 자동화하세요.
           </p>
           <p className="mt-4 text-sm font-medium text-brand-700">
-            TruckLog AI는 2026년 3월 30일 출시 예정이며, 현재 약 80% 개발 완료 상태입니다.
+            TruckLog AI는 2026년 3월 30일 출시 예정입니다.
           </p>
         </div>
 
@@ -188,7 +188,7 @@ export const Pricing: React.FC = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-2">신청이 접수되었습니다!</h3>
                 <p className="text-slate-600 mb-6 leading-relaxed">
-                  TruckLog AI는 2026년 3월 30일 출시 예정이며, 현재 약 80% 개발 완료 상태입니다.<br/>
+                  TruckLog AI는 2026년 3월 30일 출시 예정입니다.<br/>
                   <br/>
                   빠르게 시작을 원하시면 아래 계좌로 입금해 주세요.<br/>
                   <br/>
