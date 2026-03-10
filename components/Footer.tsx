@@ -28,12 +28,9 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
           <div>
-            <h4 className="text-white font-bold mb-4">고객지원</h4>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#apply" className="hover:text-brand-400">도입 상담: 신청서 작성</a></li>
-              <li><a href="mailto:dealer@trucklogai.com" className="hover:text-brand-400">이메일: dealer@trucklogai.com</a></li>
-              <li>운영시간: 평일 09:00 - 18:00</li>
-            </ul>
+            <a href="mailto:cloudlike958@gmail.com" className="text-sm hover:text-brand-400">
+              이메일: cloudlike958@gmail.com
+            </a>
           </div>
         </div>
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
