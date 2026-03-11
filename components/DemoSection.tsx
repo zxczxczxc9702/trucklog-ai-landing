@@ -16,21 +16,8 @@ export const DemoSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="relative max-w-4xl mx-auto">
-          <div className="relative bg-white rounded-xl border border-slate-200 shadow-lg overflow-hidden">
-            {/* Mock Browser Header */}
-            <div className="bg-slate-100 border-b border-slate-200 px-4 py-3 flex items-center space-x-2">
-              <div className="flex space-x-1.5">
-                <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                <div className="w-3 h-3 rounded-full bg-green-400"></div>
-              </div>
-              <div className="flex-1 text-center text-xs text-slate-500 font-medium font-mono">
-                blog.naver.com/truck-dealer/1234
-              </div>
-            </div>
-
-            {/* Mock Blog Content */}
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white border-x border-slate-200">
             <div className="p-8 md:p-12 bg-white h-[800px] overflow-y-auto scrollbar-hide">
               {/* Title Area */}
               <div className="mb-8 border-b border-slate-100 pb-6">
@@ -126,15 +113,8 @@ export const DemoSection: React.FC = () => {
                 </div>
               </div>
             </div>
-            
-            {/* Scroll indicator overlay */}
-            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none flex items-end justify-center pb-8">
-              <span className="text-sm font-medium text-slate-400 animate-bounce">
-                아래로 스크롤하여 전체 원고 확인
-              </span>
-            </div>
           </div>
-          
+
           <div className="text-center mt-8">
             <p className="text-sm text-slate-500">
               실제 서비스에서는 제목, 본문, 후킹 문구까지 자동 생성됩니다
